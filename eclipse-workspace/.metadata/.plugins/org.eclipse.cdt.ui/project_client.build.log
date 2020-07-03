@@ -1,0 +1,15 @@
+12:06:15 **** Incremental Build of configuration Debug for project project_client ****
+make all 
+Building file: ../src/project_client.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/project_client.d" -MT"src/project_client.o" -o "src/project_client.o" "../src/project_client.c"
+Finished building: ../src/project_client.c
+ 
+Building target: project_client
+Invoking: GCC C Linker
+gcc  -o "project_client"  ./src/project_client.o   -lpthread
+Finished building target: project_client
+ 
+
+12:06:16 Build Finished. 0 errors, 0 warnings. (took 657ms)
+

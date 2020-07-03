@@ -1,0 +1,6 @@
+10:38:06 **** Incremental Build of configuration Debug for project reuseaddr ****
+make all 
+make: 'all'을(를) 위해 할 일이 없습니다.
+
+10:38:06 Build Finished. 0 errors, 0 warnings. (took 443ms)
+

@@ -1,0 +1,15 @@
+15:48:07 **** Incremental Build of configuration Debug for project 07_file_ser ****
+make all 
+Building file: ../src/07_file_ser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/07_file_ser.d" -MT"src/07_file_ser.o" -o "src/07_file_ser.o" "../src/07_file_ser.c"
+Finished building: ../src/07_file_ser.c
+ 
+Building target: 07_file_ser
+Invoking: GCC C Linker
+gcc  -o "07_file_ser"  ./src/07_file_ser.o   
+Finished building target: 07_file_ser
+ 
+
+15:48:08 Build Finished. 0 errors, 0 warnings. (took 853ms)
+

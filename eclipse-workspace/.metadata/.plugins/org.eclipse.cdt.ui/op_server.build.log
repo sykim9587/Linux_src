@@ -1,0 +1,15 @@
+15:04:27 **** Build of configuration Debug for project op_server ****
+make all 
+Building file: ../src/op_server.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/op_server.d" -MT"src/op_server.o" -o "src/op_server.o" "../src/op_server.c"
+Finished building: ../src/op_server.c
+ 
+Building target: op_server
+Invoking: GCC C Linker
+gcc  -o "op_server"  ./src/op_server.o   
+Finished building target: op_server
+ 
+
+15:04:27 Build Finished. 0 errors, 0 warnings. (took 682ms)
+

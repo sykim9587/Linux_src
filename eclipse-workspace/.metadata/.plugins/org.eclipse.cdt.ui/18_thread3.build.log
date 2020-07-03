@@ -1,0 +1,6 @@
+12:36:38 **** Incremental Build of configuration Debug for project 18_thread3 ****
+make all 
+make: 'all'을(를) 위해 할 일이 없습니다.
+
+12:36:39 Build Finished. 0 errors, 0 warnings. (took 556ms)
+

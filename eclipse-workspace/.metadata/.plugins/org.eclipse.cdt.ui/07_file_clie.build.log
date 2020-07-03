@@ -1,0 +1,15 @@
+15:48:17 **** Incremental Build of configuration Debug for project 07_file_clie ****
+make all 
+Building file: ../src/07_file_clie.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/07_file_clie.d" -MT"src/07_file_clie.o" -o "src/07_file_clie.o" "../src/07_file_clie.c"
+Finished building: ../src/07_file_clie.c
+ 
+Building target: 07_file_clie
+Invoking: GCC C Linker
+gcc  -o "07_file_clie"  ./src/07_file_clie.o   
+Finished building target: 07_file_clie
+ 
+
+15:48:17 Build Finished. 0 errors, 0 warnings. (took 686ms)
+

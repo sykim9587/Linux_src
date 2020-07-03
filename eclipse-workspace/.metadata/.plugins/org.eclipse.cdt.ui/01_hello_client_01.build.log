@@ -1,0 +1,6 @@
+09:16:09 **** Incremental Build of configuration Debug for project 01_hello_client_01 ****
+make all 
+make: 'all'을(를) 위해 할 일이 없습니다.
+
+09:16:09 Build Finished. 0 errors, 0 warnings. (took 566ms)
+

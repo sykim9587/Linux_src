@@ -1,0 +1,6 @@
+12:06:13 **** Incremental Build of configuration Debug for project project_server ****
+make all 
+make: 'all'을(를) 위해 할 일이 없습니다.
+
+12:06:14 Build Finished. 0 errors, 0 warnings. (took 546ms)
+

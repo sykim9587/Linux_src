@@ -1,0 +1,9 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:sock_type,org.eclipse.launchbar.core.descriptorType.default\:get_buf,org.eclipse.launchbar.core.descriptorType.default\:set_buf,org.eclipse.launchbar.core.descriptorType.default\:reuseaddr,org.eclipse.launchbar.core.descriptorType.default\:18_thread2,org.eclipse.launchbar.core.descriptorType.default\:18_thread3,org.eclipse.launchbar.core.descriptorType.default\:18_thread4,org.eclipse.launchbar.core.descriptorType.default\:semaphore,org.eclipse.launchbar.core.descriptorType.default\:18_thread1,org.eclipse.launchbar.core.descriptorType.default\:hacker_1
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:set_buf/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:set_buf/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:sock_type/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:sock_type/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

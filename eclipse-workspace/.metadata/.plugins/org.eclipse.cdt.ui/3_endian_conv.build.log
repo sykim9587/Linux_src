@@ -1,0 +1,15 @@
+10:40:33 **** Build of configuration Debug for project 3_endian_conv ****
+make all 
+Building file: ../src/3_endian_conv.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/3_endian_conv.d" -MT"src/3_endian_conv.o" -o "src/3_endian_conv.o" "../src/3_endian_conv.c"
+Finished building: ../src/3_endian_conv.c
+ 
+Building target: 3_endian_conv
+Invoking: Cross GCC Linker
+gcc  -o "3_endian_conv"  ./src/3_endian_conv.o   
+Finished building target: 3_endian_conv
+ 
+
+10:40:33 Build Finished. 0 errors, 0 warnings. (took 629ms)
+

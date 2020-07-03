@@ -1,0 +1,6 @@
+09:52:29 **** Incremental Build of configuration Debug for project get_buf ****
+make all 
+make: 'all'을(를) 위해 할 일이 없습니다.
+
+09:52:29 Build Finished. 0 errors, 0 warnings. (took 571ms)
+

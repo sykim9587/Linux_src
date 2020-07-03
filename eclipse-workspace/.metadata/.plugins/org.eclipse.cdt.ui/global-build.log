@@ -1,0 +1,15 @@
+17:22:36 **** Incremental Build of configuration Debug for project hacker_1 ****
+make all 
+Building file: ../src/hacker_1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hacker_1.d" -MT"src/hacker_1.o" -o "src/hacker_1.o" "../src/hacker_1.c"
+Finished building: ../src/hacker_1.c
+ 
+Building target: hacker_1
+Invoking: GCC C Linker
+gcc  -o "hacker_1"  ./src/hacker_1.o   
+Finished building target: hacker_1
+ 
+17:22:46 **** Incremental Build of configuration Debug for project hacker_1 ****
+make all 
+make: 'all'을(를) 위해 할 일이 없습니다.

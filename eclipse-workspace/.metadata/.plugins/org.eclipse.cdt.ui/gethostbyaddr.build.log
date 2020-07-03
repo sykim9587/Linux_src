@@ -1,0 +1,15 @@
+16:19:36 **** Build of configuration Debug for project gethostbyaddr ****
+make all 
+Building file: ../src/gethostbyaddr.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/gethostbyaddr.d" -MT"src/gethostbyaddr.o" -o "src/gethostbyaddr.o" "../src/gethostbyaddr.c"
+Finished building: ../src/gethostbyaddr.c
+ 
+Building target: gethostbyaddr
+Invoking: GCC C Linker
+gcc  -o "gethostbyaddr"  ./src/gethostbyaddr.o   
+Finished building target: gethostbyaddr
+ 
+
+16:19:37 Build Finished. 0 errors, 0 warnings. (took 693ms)
+

@@ -1,0 +1,27 @@
+09:55:28 **** Incremental Build of configuration Debug for project 18_chat_server ****
+make all 
+Building file: ../src/18_chat_server.c
+Invoking: GCC C Compiler
+gcc -D_REENTRANT -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/18_chat_server.d" -MT"src/18_chat_server.o" -o "src/18_chat_server.o" "../src/18_chat_server.c"
+../src/18_chat_server.c: In function ‘main’:
+../src/18_chat_server.c:48:59: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+   48 |   clnt_sock=accept(serv_sock, (struct sockaddr*)&clnt_adr,&clnt_adr_sz);
+      |                                                           ^~~~~~~~~~~~
+      |                                                           |
+      |                                                           int *
+In file included from /usr/include/netinet/in.h:23,
+                 from /usr/include/arpa/inet.h:22,
+                 from ../src/18_chat_server.c:5:
+/usr/include/x86_64-linux-gnu/sys/socket.h:233:28: note: expected ‘socklen_t * restrict’ {aka ‘unsigned int * restrict’} but argument is of type ‘int *’
+  233 |      socklen_t *__restrict __addr_len);
+      |      ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+Finished building: ../src/18_chat_server.c
+ 
+Building target: 18_chat_server
+Invoking: GCC C Linker
+gcc  -o "18_chat_server"  ./src/18_chat_server.o   -lpthread
+Finished building target: 18_chat_server
+ 
+
+09:55:29 Build Finished. 0 errors, 1 warnings. (took 742ms)
+
