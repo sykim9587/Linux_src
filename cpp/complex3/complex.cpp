@@ -3,7 +3,8 @@
 
 std::ostream& operator<<(std::ostream& out, const Complex& rhs) //global function
 {
-	out << "("<<rhs.real()<<", "<<rhs.imag()<<"i)"; //using public function to use private members
+	//out << "("<<rhs.real()<<", "<<rhs.imag()<<"i)"; //using public function to use private members
+	out << "("<<rhs.re_<<", "<<rhs.im_<<"i)";
 	return out;
 }
 

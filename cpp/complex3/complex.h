@@ -2,14 +2,15 @@
 #define COMPLEX_H
 #include <iostream>
 
-class Complex;
-std::ostream& operator<<(std::ostream& out, const Complex& rhs);//cout is a class in std::ostream, reference needed since we change cout
+//class Complex; //so we can use Complex
+//std::ostream& operator<<(std::ostream& out, const Complex& rhs);//cout is a class in std::ostream, reference needed since we change cout
 
 class Complex{
+friend std::ostream& operator<<(std::ostream& out, const Complex& rhs);
+
 private:
 	double re_; //mRe, m_re, re_ all possible
 	double im_;
-	
 	
 public:
 	Complex(double re=0.0, double im=0.0);
@@ -29,9 +30,4 @@ public:
 	void imag(double im);
 
 };
-
-
-
-
-
 #endif
