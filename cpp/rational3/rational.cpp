@@ -2,7 +2,7 @@
 #include <cassert>
 #include "rational.h"
 
-int gcd(int a, int b)
+static int gcd(int a, int b) //this should be in math folder
 {
 	if(a==0 || b==0)
 		return 1;
@@ -33,6 +33,7 @@ Rational::Rational(const Rational& rhs)
 	
 	this->num = rhs.num;
 	this->den = rhs.den;
+	this->Reduce(); //getting reduced
 	
 }
 
@@ -41,6 +42,7 @@ Rational::Rational(int num, int den)
 	assert(den != 0);
 	this->num=num;
 	this->den=den;
+	this->Reduce();
 }
 
 //destructor
