@@ -36,7 +36,6 @@ const Rational Rational::operator+(const Rational& rhs)
 {
 	Rational result(this->num*rhs.den + this->den*rhs.num, this->den*rhs.den);
 	return result; 
-	//return Rational(num,den);
 }
 
 const Rational Rational::operator-(const Rational& rhs)

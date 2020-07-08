@@ -1,6 +1,8 @@
 #ifndef RATIONAL_H
 #define RATIONAL_H
 
+int gcd(int a, int b);
+
 class Rational {
 private:
 	int num;
@@ -14,9 +16,6 @@ public:
 	int getNum();
 	int getDen();
 	
-	void setNum(int num);
-	void setDen(int den);
-	
 	void Reduce();
 	
 	void operator=(const Rational& rhs);
@@ -26,7 +25,6 @@ public:
 	const Rational operator-(const Rational& rhs);
 	const Rational operator*(const Rational& rhs);
 	const Rational operator/(const Rational& rhs);
-
 };
 
 #endif
