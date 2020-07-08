@@ -3,6 +3,12 @@
 #include <cstddef>
 #include <cassert>
 
+String::String(const char *str, bool )  // when there is string in heap section already, use this. 
+{
+	this->str = str;
+	this->len = strlen(str);
+}
+
 void String::set_str(const char* str)
 {
 	if(str){ //if not NULL
@@ -30,7 +36,7 @@ String::String()
 */
 
 
-String::String(const char *str)
+String::String(const char *str) 
 {
 	this->set_str(str);
 }
@@ -76,7 +82,30 @@ bool String::operator==(const String& rhs)
 {
 	return strcmp(this->str,rhs.str)==0;
 }
+/* //original one
+const String String::operator+(const String& rhs)
+{
+	char *buf = new char[this->len + rhs.len +1];
+	strcpy(buf, this->str);
+	strcat(buf, rhs.str); //adding
+	
+	String result(buf);
+	delete [] buf;
+	return result;
+}
+*/
 
+
+const String String::operator+(const String& rhs)
+{
+	char *buf = new char[this->len + rhs.len +1];
+	strcpy(buf, this->str);
+	strcat(buf, rhs.str); //adding
+	
+	String result(buf, true); //special constructor that use the string already in heap section
+	//delete [] buf;
+	return result;
+}
 
 const char *String::c_str()
 {
