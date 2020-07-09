@@ -1,6 +1,7 @@
 #include <iostream>
 #include "complex.h"
 
+
 int main()
 {
 
@@ -29,6 +30,22 @@ int main()
 	std::cout << "c4: "<< c4 << std::endl;
 	std::cout << "c5: "<< c5 << std::endl;
 	
+	Complex *pc = new Complex; //making complex object in HEAP area
+	Complex *pArr[5];
+	pArr[0] = new Complex;
+	pArr[1] = new Complex(1.0);
+	pArr[2] = new Complex (3.0,4.0);
+	pArr[3] = new Complex;
+	pArr[4] = new Complex;
 	
+	//std::cout << "# of Complex object : "<< numberofComplex <<std::endl;
+	std::cout << "# of Complex object : "<< Complex::getNumberofComplex() << std::endl;
+	
+	delete pc;
+	for(int i=0; i<5; i++)
+	{
+		delete pArr[i];
+	}
+	std::cout << "# of Complex object : "<< Complex::getNumberofComplex() << std::endl;
 	return 0;
 }

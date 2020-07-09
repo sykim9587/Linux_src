@@ -1,5 +1,8 @@
 #include "complex.h"
+
 #include <iostream>
+
+int Complex::numberofComplex;
 
 std::ostream& operator<<(std::ostream& out, const Complex& rhs) //global function
 {
@@ -8,11 +11,30 @@ std::ostream& operator<<(std::ostream& out, const Complex& rhs) //global functio
 	return out;
 }
 
+int Complex::getNumberofComplex()
+{
+	return Complex::numberofComplex;
+}
+
+
 Complex::Complex(double re, double im)
 : re_(re), im_(im)							//constructor initialization list
 {
+	++Complex::numberofComplex;
 	//re_ = re;
 	//im_ = im;
+}
+
+Complex::Complex(const Complex& rhs)
+:re_(rhs.re_), im_(rhs.im_)
+{
+	
+	++Complex::numberofComplex;
+}
+
+Complex::~Complex(){
+
+	--Complex::numberofComplex;
 }
 
 bool Complex::operator==(const Complex& rhs) const

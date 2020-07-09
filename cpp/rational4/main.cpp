@@ -25,6 +25,9 @@ int main()
 	
 	const Rational r10(r1); //using copy constructor
 	
+	Rational *arr[5];
+	for (int i=0; i<5; i++)
+		arr[i]= new Rational;
 
 	std::cout << "r1 is " << r1 << std::endl;
 	std::cout << "r2 is " << r2 << std::endl;
@@ -36,18 +39,12 @@ int main()
 	std::cout << "r8 is " << r8 << std::endl;
 	std::cout << "r10 is " << r10 << std::endl;
 	
-	/*
+	std::cout << "# of Rational object : "<< Rational::getNumberofRational() << std::endl;
 
-	std::cout << "using operator= (r1=r3) r1: " << r1.getNum() <<"/"<<r1.getDen() << std::endl;
-	std::cout << "using default arguments r2: " << r2.getNum() <<"/"<<r2.getDen() << std::endl;
-	std::cout << "ordinary constructor r3: " << r3.getNum() <<"/"<<r3.getDen() << std::endl;
-	std::cout << "using copy constructor(r4=r3) r4: " << r4.getNum() <<"/"<<r4.getDen() << std::endl;	
-	std::cout << "using operator+ (r2+r4) r5: " << r5.getNum() <<"/"<<r5.getDen() << std::endl;
-	std::cout << "using operator- (r2-r4) r6: " << r6.getNum() <<"/"<<r6.getDen() << std::endl;
-	std::cout << "using operator* (r2*r4) r7: " << r7.getNum() <<"/"<<r7.getDen() << std::endl;
-	std::cout << "using operator/ (r2/r4) r8: " << r8.getNum() <<"/"<<r8.getDen() << std::endl;
-	
-	*/
+	for(int i=0; i<5; i++)
+		delete arr[i];
+
+	std::cout << "# of Rational object : "<< Rational::getNumberofRational() << std::endl;
 
 	return 0;
 }

@@ -2,6 +2,13 @@
 #include <cassert>
 #include "rational.h"
 
+int Rational::numberofRational;
+
+int Rational::getNumberofRational()
+{
+	return numberofRational;
+}
+
 std::ostream& operator<<(std::ostream& out, const Rational& rhs) //global function
 {
 	out << "("<<rhs.num_<<"/ "<<rhs.den_<<")";
@@ -35,32 +42,32 @@ void Rational::Reduce()
 }
 
 //constructor
-/*
+
 Rational::Rational(const Rational& rhs)
 {
 	
 	num_ = rhs.num_;
 	den_ = rhs.den_;
 	this->Reduce(); //getting reduced
+	++Rational::numberofRational;
 	
 }
-*/
+
 
 Rational::Rational(int num, int den)
 : num_(num), den_(den)
 {
+	++Rational::numberofRational;
 	assert(den!= 0);
 	this->Reduce();
 }
 
-/*
+
 //destructor
 Rational::~Rational()
 {
-	//nothing
+	--Rational::numberofRational;
 }
-*/
-
 
 //operator overloading
 /*

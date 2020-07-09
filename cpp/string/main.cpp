@@ -18,9 +18,9 @@ int main()
 		
 	s1 = s2 + "ROS";
 		
-	std::cout <<"s1: "<<s1.c_str()<<"\ts1 len: "<< s1.length()<<std::endl;	
-	std::cout <<"s2: "<<s2.c_str()<<"\ts2 len: "<< s2.length()<<std::endl;
-	std::cout <<"s3: "<<s3.c_str()<<"\ts3 len: "<< s3.length()<<std::endl;
+	std::cout <<"s1: "<<s1<<"\ts1 len: "<< s1.length()<<std::endl;	
+	std::cout <<"s2: "<<s2<<"\ts2 len: "<< s2.length()<<std::endl;
+	std::cout <<"s3: "<<s3<<"\ts3 len: "<< s3.length()<<std::endl;
 
 	return 0;
 }

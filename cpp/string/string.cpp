@@ -2,10 +2,17 @@
 #include <cstring>
 #include <cstddef>
 #include <cassert>
+#include <iostream>
 
-String::String(const char *str, bool )  // when there is string in heap section already, use this. 
+std::ostream& operator<<(std::ostream& out, const String& rhs) //global function
 {
-	this->str = str;
+	out << rhs.str;
+	return out;
+}
+
+String::String(const char *str, bool)  // when there is string in heap section already, use this. 
+{
+	this->str = (char *)str; //type casting needed
 	this->len = strlen(str);
 }
 
