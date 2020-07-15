@@ -86,7 +86,7 @@ inline long ceil(const Rational& r){
 }
 
 //double to Rational
-//Rational toRational (double x, int iterations = 5);
+Rational toRational (double x, int iterations = 4);
 
 
 

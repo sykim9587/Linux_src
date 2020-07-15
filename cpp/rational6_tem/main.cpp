@@ -1,8 +1,37 @@
 #include <iostream>
+#include <cmath>
 #include "rational.h"
 
 //final complete class for Rational from textbook
 
+Rational harmonic(int n){
+	Rational r = 1;
+	for (int i=2; i<=n; ++i) r+= Rational(1,i);
+	return r;
+}
+
+Rational binomial (int n, int k){
+	if (n<0) {cerr << "1st out of range" << endl; exit(1);}
+	if (k<0 || k>n){
+		cerr << "2nd out of range" << endl; exit(1); 
+	}
+	if (k > n-k) k = n-k;
+	if (k ==0) return 1;
+	return Rational(n-k+1, k) * binomial(n,k-1);
+}
+
+Rational bernoulli(int n){
+	if(n<0) {cerr << "index out of range" << endl; exit(1); }
+	else if (n==0) return 1;
+	else if (n==1) return Rational(-1,2);
+	if(n%2) return 0;
+	Rational r=0;
+	for (int k=0; k<n; ++k){
+		r -= binomial(n+1, k) * bernoulli(k);
+	}
+	r /= n+1;
+	return r;
+}
 int main()
 {
 	
@@ -62,6 +91,27 @@ int main()
 	
 	if(r6>r7) cout<<"r6 is bigger than r7"<<endl;
 	else cout<<"r6 is smaller than r7"<<endl;
+
+	cout<<endl<<"####Testing torational function####"<<endl;		
+	cout<<"toRational(0.75) is "<<toRational(0.75,5)<<endl;
+	
+	cout<<endl<<"####Testing Harmonic Number####"<<endl;		
+	cout<<"n\tEuler Approx. \tHarmonic(n)"<<endl;
+	cout<<"========================================" << endl;
+	for(int n=1; n<25; ++n){
+		Rational r=harmonic(n);
+		double g = toDouble(r) - log(n);
+		g -= (1.0/(2*n)) * (1.0-(1.0/(6*n)));
+		cout<<n<<'\t'<<g<<'\t'<<r<<endl;
+	}
+	
+	cout<<endl<<"####Testing Bernoulli function####"<<endl;		
+	cout<<endl<<"n\tBernoulli(n)"<<endl;
+	cout<<"======================================="<<endl;
+	Rational b;
+	for (int n=0; n<23; ++n){
+		if((b=bernoulli(n)) != 0) cout<<n<<'\t'<<b<<endl;
+	}
 	
 	return 0;
 }

@@ -1,5 +1,7 @@
 #include "rational.h"
 #include <stdlib.h>
+#include <cmath>
+#include <limits>
 
 long Rational::gcd(long u, long v){
 	long a = labs(u) , b=labs(v);
@@ -199,4 +201,31 @@ ostream& operator<< (ostream& s, const Rational& r) {
 	}
 	
 	return s;
+}
+
+//double to Rational (recursive)
+
+static Rational toRational(double x, double limit, int iterations){
+	double intpart;
+	double fractpart = modf(x, &intpart);
+	double d = 1.0/fractpart;
+	long left = long(intpart);
+	
+	if(d>limit || iterations==0){
+		return Rational(left);
+	}
+	else{
+		return Rational(left) + toRational(d, limit*0.1, --iterations).invert();
+	}
+}
+
+Rational toRational (double x, int iterations){
+	if(x==0.0 || x< numeric_limits<long>::min() || x > numeric_limits<long>::max()) {
+		//to check if it's in long limit
+		return Rational (0,1);
+	}
+	else{
+		int sign = x<0.0 ? -1: 1;
+		return sign * toRational(sign*x, 1.0e12, iterations);
+	}
 }
