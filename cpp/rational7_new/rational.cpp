@@ -34,13 +34,16 @@ std::ostream& operator<<(std::ostream& out, const Rational& rhs) //global functi
 	return out;
 }
 
+//size_t -> unsigned data type (biggest integer) in64bit, unsigned long long (so it's better to put this 
+//in for loop when it gets large)
+
 void *Rational::operator new(size_t size) //the pool is created! instead of making new space every time
 {
 	if(size != sizeof(Rational)) //class size only depends on the data memeber
 		return ::operator new(size); //:: means global function
 	
 	Rational *ptr = headOfFreeList;
-	
+	//change it to headOfFreeNode 
 	if(ptr ){ //the spaces are already there
 		headOfFreeList = ptr->next;
 	}else { //if null, if nothing is there
