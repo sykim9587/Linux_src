@@ -1,7 +1,7 @@
 #include <iostream>
 #include "rational.h"
 
-//using iostream, cin
+//using operator new and delete 
 
 int main()
 {

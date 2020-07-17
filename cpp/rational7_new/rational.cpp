@@ -4,6 +4,10 @@
 
 int Rational::numberofRational;
 
+const int Rational::BLOCK_SIZE = 256;
+
+Rational *Rational::headOfFreeList = NULL; //initialized since its global
+
 int Rational::getNumberofRational()
 {
 	return numberofRational;
@@ -29,6 +33,50 @@ std::ostream& operator<<(std::ostream& out, const Rational& rhs) //global functi
 	out << "("<<rhs.num_<<"/ "<<rhs.den_<<")";
 	return out;
 }
+
+void *Rational::operator new(size_t size) //the pool is created! instead of making new space every time
+{
+	if(size != sizeof(Rational)) //class size only depends on the data memeber
+		return ::operator new(size); //:: means global function
+	
+	Rational *ptr = headOfFreeList;
+	
+	if(ptr ){ //the spaces are already there
+		headOfFreeList = ptr->next;
+	}else { //if null, if nothing is there
+		Rational *pArr = reinterpret_cast<Rational*>(::operator new(Rational::BLOCK_SIZE * sizeof(Rational)));
+		assert( pArr);
+		
+		for(int i =1; i<Rational::BLOCK_SIZE-1; ++i)
+			pArr[i].next = &pArr[i+1];
+		pArr[Rational::BLOCK_SIZE -1].next = NULL;
+		
+		headOfFreeList = &pArr[1]; 
+
+		ptr=pArr; //first node
+	}
+	
+	return ptr;
+	
+}
+
+void Rational::operator delete(void *ptr, size_t size)
+{
+	if(ptr ==0)
+		return;
+	if (size!=sizeof(Rational)){
+		::operator delete(ptr);
+		return;
+	}
+	
+	Rational *deleteNode = reinterpret_cast<Rational *>(ptr);
+	deleteNode->next = headOfFreeList;
+	headOfFreeList = deleteNode;
+
+}
+
+
+
 
 static int gcd(int a, int b) //this should be in math folder
 {

@@ -16,7 +16,7 @@ bool BoundArray::operator==(const BoundArray& rhs) const
 {
 	if(lower_ != rhs.lower_)
 		return false;
-	return SafeArray::operator==((SafeArray)rhs); //slicing done. 
+	return SafeArray::operator==(static_cast<SafeArray>(rhs)); //slicing done. 
 }
 	
 int& BoundArray::operator[](int index)

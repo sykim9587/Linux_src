@@ -10,16 +10,14 @@ private:
 public:
 	BoundArray(int lower, int upper);
 	BoundArray(int lower, int upper, T* pArr);
-	//BoundArray(const BoundArray& rhs);
-	//~BoundArray();
-	//BoundArray& operator=(const BoundArray& rhs);
+	
 	bool operator==(const BoundArray<T>& rhs) const;
 	
 	T& operator[](int index);
 	const T& operator[](int index) const;
 	
-	T lower() const;
-	T upper() const;
+	int lower() const;	//index
+	int upper() const;
 
 };
 
@@ -42,7 +40,7 @@ bool BoundArray<T>::operator==(const BoundArray<T>& rhs) const
 {
 	if(lower_ != rhs.lower_)
 		return false;
-	return SafeArray<T>::operator==((SafeArray<T>)rhs); //slicing done. 
+	return SafeArray<T>::operator==(static_cast<SafeArray<T>>(rhs)); //slicing done. 
 }
 
 template <typename T>	
@@ -60,13 +58,13 @@ const T& BoundArray<T>::operator[](int index) const
 }
 	
 template <typename T>
-T BoundArray<T>::lower() const
+int BoundArray<T>::lower() const
 {
 	return lower_;
 }
 
 template <typename T>
-T BoundArray<T>::upper() const
+int BoundArray<T>::upper() const
 {
 	return lower_+Array<T>::size_-1; //since it's protected member
 }

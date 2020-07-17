@@ -48,10 +48,10 @@ int main()
 	
 	for (int i=0; i<5; ++i){
 		if(typeid(*shapes[i]) == typeid(Rectangle)){ //very common method in JAVA
-			Rectangle * pr = (Rectangle*)shapes[i]; //changing the pointer type
+			Rectangle * pr = dynamic_cast<Rectangle*>(shapes[i]); //changing the pointer type
 			std::cout << "sumOfSide: "<< pr->sumOfSide() << std::endl;
 		} else if(typeid(*shapes[i]) == typeid(Circle)){
-			Circle* pc = (Circle*)shapes[i]; //changing the pointer type
+			Circle* pc = dynamic_cast<Circle*>(shapes[i]); //changing the pointer type
 			std::cout << "circumference: "<< pc->circumference() << std::endl;			
 		}else{
 		

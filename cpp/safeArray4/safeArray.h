@@ -33,7 +33,7 @@ SafeArray<T>::SafeArray(int size)
 
 template <typename T>
 SafeArray<T>::SafeArray(const SafeArray<T>& rhs)
-:Array<T>((Array<T>)rhs)
+:Array<T>(static_cast<Array<T>>(rhs))
 {
 //slicing. typecasting the SafeArray to rhs.
 }
@@ -54,7 +54,7 @@ SafeArray<T>::~SafeArray()
 template <typename T>
 SafeArray<T>& SafeArray<T>::operator=(const SafeArray<T>& rhs)
 {
-	this->Array<T>::operator=((Array<T>)rhs); //type casting
+	this->Array<T>::operator=(static_cast<Array<T>>(rhs)); //type casting
 	//if there are more memeber variable for SafeArray, add here. 
 	return *this;
 }
@@ -62,7 +62,7 @@ SafeArray<T>& SafeArray<T>::operator=(const SafeArray<T>& rhs)
 template <typename T>	
 bool SafeArray<T>::operator==(const SafeArray<T>& rhs) const
 {
-	return this->Array<T>::operator==((Array<T>)rhs);
+	return this->Array<T>::operator==(static_cast<Array<T>>(rhs));
 }
 
 template <typename T>	

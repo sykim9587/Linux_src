@@ -11,7 +11,7 @@ SafeArray::SafeArray(int size)
 
 
 SafeArray::SafeArray(const SafeArray& rhs)
-:Array((Array)rhs)
+:Array(static_cast<Array>(rhs))
 {
 //slicing. typecasting the SafeArray to rhs.
 }
@@ -29,14 +29,14 @@ SafeArray::~SafeArray()
 
 SafeArray& SafeArray::operator=(const SafeArray& rhs)
 {
-	this->Array::operator=((Array)rhs); //type casting
+	this->Array::operator=(static_cast<Array>(rhs)); //type casting
 	//if there are more memeber variable for SafeArray, add here. 
 	return *this;
 }
 	
 bool SafeArray::operator==(const SafeArray& rhs) const
 {
-	return this->Array::operator==((Array)rhs);
+	return this->Array::operator==(static_cast<Array>(rhs));
 }
 	
 int& SafeArray::operator[](int index) //typical class inheritance
