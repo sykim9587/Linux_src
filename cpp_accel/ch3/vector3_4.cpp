@@ -21,35 +21,26 @@ int main()
 		words.push_back(d); //the size is changable! for vector. 
 	}
 	
-	int size = words.size();
-	
-	if (size ==0) { 	//nothing is in this vector
-		cout << "no homework grade, please try again" << endl;
-		return -1;
-	}
-	
+	int size = words.size();	
 	sort(words.begin(), words.end());
-	int count = 1;
-	
-	
-	for(int i = 0; i <size; i++){
-		//cout << words[i] << endl;
-		
-		if (i ==0 || (words[i] != words[i-1])){
-			if (i != 0){
-				cout << count << endl;
-				count = 1;
-			}
 
-			cout<<words[i]<< ": ";
+	string min;
+	string max;
+	int minnum = words[0].length();
+	int maxnum = words[0].length();
+	for(int i = 0; i <size; i++){
+		if (words[i].length() > maxnum){
+			maxnum = words[i].length();
+			max = words[i];
 		}
-		else {
-			count++;
-			if (i == size-1) 
-				cout << count << endl;
-		}
-		
+		if (words[i].length() < minnum){
+			minnum = words[i].length();
+			min = words[i];	
+		}	
 	} 
+	
+	cout << "min word is " << min << "length is " << minnum << endl;
+	cout << "max word is " << max << "length is " << maxnum << endl;	
 	
 	
 	return 0;
