@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-
+#include <iterator>
 
 using std::cin;
 using std::cout;
@@ -10,6 +10,8 @@ using std::endl;
 using std::string;
 using std::vector;
 using std::max;
+using std::copy;
+using std::back_inserter;
 
 string::size_type width(const vector<string>& lines)
 {
@@ -48,7 +50,10 @@ vector<string> vcat (const vector<string>& top, const vector<string>& bottom)
 //		re.push_back(*iter);
 
 //other way to do it - using insert member function from vector.
-	re.insert(re.end(),bottom.begin(), bottom.end());
+//	re.insert(re.end(),bottom.begin(), bottom.end());
+
+//another way - using copy from algorithm library
+	copy(bottom.begin(), bottom.end(), back_inserter(re));	//when run out of space, re becomes larger
 
 	return re;
 }
