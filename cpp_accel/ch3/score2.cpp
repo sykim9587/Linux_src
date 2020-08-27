@@ -33,7 +33,7 @@ int main()
 		homework.push_back(d); //the size is changable! for vector. 
 	}
 	
-	int size = homework.size();
+	int size = homework.size(); //typedef vector<double>::size_type vec_sz => is a better practice
 	
 	if (size ==0) { 	//nothing is in this vector
 		cout << "no homework grade, please try again" << endl;
